@@ -1,8 +1,13 @@
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 #inicia uma nova instância do firefox
 driver = webdriver.Firefox() 
+
+#inicia uma nova instância do chrome
+#driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
+
 #realiza uma requisição HTTP do tipo GET, pelo firefox
 driver.get("http://www.python.org") 
 
