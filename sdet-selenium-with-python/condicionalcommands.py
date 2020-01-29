@@ -6,6 +6,9 @@ Condicional Commands
 -is_displayed()
 -is_enabled()
 -is_selected()
+
+caso não apareça os atributos das classes no VSCode basta clicar ctrl + shift + p 
+e digigar python interpreter para selecionar o interpretador
  '''
 
 from selenium import webdriver
@@ -17,7 +20,7 @@ driver.get("http://newtours.demoaut.com/")
 
 user_ele = driver.find_element_by_name('userName')
 
-#retorna true/false se o elemento está sendo exibido
+#retorna true/false se o elemento está sendo exibido para o usuário
 print(user_ele.is_displayed())
 
 #retorna true/false se o elemento está habilitado
@@ -33,3 +36,16 @@ user_ele.send_keys("mercury")
 password_ele.send_keys("mercury")
 
 driver.find_element_by_name("login").click()
+
+#existe dois radio buttons, o comando abaixo busca o radio pelo seu valor
+#já que o name é similar 
+roundtrip_radio = driver.find_element_by_css_selector("input[value=roundtrip]")
+
+#retorna true/false caso o elemento esteja selecionado
+print("status of round trip radio button",roundtrip_radio.is_selected())
+
+onetrip_radio = driver.find_element_by_css_selector("input[value=oneway]")
+
+print("status of oneway radio button",onetrip_radio.is_selected())
+
+
